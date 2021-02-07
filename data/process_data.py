@@ -59,6 +59,18 @@ def clean_data(df):
     df = df.drop_duplicates()
     return df
 
+def save_data(df, database_filename, table_name):
+    '''saves dataframe to sql databases
+    input
+    
+    df: cleaned dataframe
+    database_filename: the name of the database file
+    table_name: name for table in database file
+    
+    '''
+    # save dataset to sqlite database 
+    engine = create_engine('sqlite:///'+database_filename)
+    df.to_sql(table_name, if_exists='replace',engine, index=False)
 
 def main():
     if len(sys.argv) == 4:
