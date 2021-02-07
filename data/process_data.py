@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
     '''load and merges the message and categories datasets.
-    input
+    inputs
     message_filepath: messages dataset
     categories_filepath: categories dataset
     
@@ -21,14 +21,43 @@ def load_data(messages_filepath, categories_filepath):
     return df
     
 def clean_data(df):
+    '''cleans data by splitting categories into different colums, create and rename columns with first row of categories & dropping duplicates
+  input
+  df: merged messages & categories
+  
+  output
+  df: cleaned df
+    '''  
+    # create a dataframe of the 36 individual category columns# select the first row of the categories  dataframe
+    categories =  df['categories'].str.split(pat = ';', expand = True)
     
+    # select the first row of the categories dataframe
+    row = categories.iloc[0]
+
+    #apply a lambda function that takes everything up to the second to last character of each string with  slicing
+    category_colnames = row.apply(lambda x:x[:-2])def save_data(df, database_filename):
     
-   
-    pass
+    # rename the columns of `categories`
+    categories.columns = category_colnames
 
-
-def save_data(df, database_filename):
-    pass  
+    # convert category values to just numbers 0 or 1
+    for column in categories:
+    
+        # set each value to be the last character of the string
+        categories[column] = categories[column].str[-1]
+    
+        # convert column from string to numeric
+        categories[column] = categories[column].astype(int)
+       
+    # drop the original categories column from `df`
+    df = df.drop('categories', axis =1)
+        
+    # concatenate the original dataframe with the new `categories` dataframe
+    df = pd.concat([df, categories], axis=1)
+        
+    # drop duplicates
+    df = df.drop_duplicates()
+    return df
 
 
 def main():
