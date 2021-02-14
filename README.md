@@ -3,7 +3,6 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Installations](#installations)
-* [Project Motivation](#project-motivation)
 * [File Descriptions](#file-descriptions)
 * [Instructions](#instructions)
 * [Results](#results)
@@ -29,6 +28,24 @@ The following packages were used for this project and can be found in the standa
 * NLTK
 * Flask
 * Plotly
+
+## File Descriptions
+There are four directories in this repository:
+#### data
+* `disaster_messages.csv`: CSV file containing over  messages sent during natural disasters.
+* `disaster_categories.csv`: CSV file containing 36 category labels for the messages in `disaster_messages.csv`.
+* `process_data.py`: Python script to run the ETL pipeline.  
+* `DisasterResponse.db`: SQLite database containing the merged, transformed and cleaned data that is ready for the machine learning pipeline
+
+#### models
+* `train_classifier.py`: Python script to run the ML pipeline that builds the model, trains it, tunes hyperparameters using GridSearch, displays the model performance results on the test data, and saves the best model to a pickle file.
+* `model.pkl`: pickle file containing trained model.
+
+#### app
+* `run.py`: Python script to run the web app displaying visualizations of the dataset and allowing users to input a message and view its categories.
+* `templates`: directory containing 2 html files:
+  -  `master.html`: Main page of web app. Contains visualizations of messages dataset.
+  -  `go.html`: Classification result page of web app.
 
 ## Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
