@@ -3,7 +3,8 @@ import plotly
 import pandas as pd
 
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import word_tokenize
+from nltk.
+import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
@@ -15,6 +16,14 @@ from sqlalchemy import create_engine
 app = Flask(__name__)
 
 def tokenize(text):
+    """ tokenize function for processing text data
+    
+        Arguments
+        text : str, text to tokenize
+    
+        Returns
+        clean_tokens: list, list of tokens
+        """ 
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
