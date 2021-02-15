@@ -28,15 +28,33 @@ from nltk.stem import WordNetLemmatizer
 
 
 def load_data(database_filepath):
+    '''load sqlite database
+    input
+    database_filepath: path to db file
+    
+    
+    output 
+    X: Features
+    y: dependent variable
+    category_names: list of categories
+    '''
     engine = create_engine('sqlite:///DisasterResponse.db')
     df = pd.read_sql_table('Disasters', engine)
     X = df['message']
-    Y = df.iloc[:, 4:]
+    y = df.iloc[:, 4:]
     category_names = list(df.columns[4:])
-    return X, Y, category_names
+    return X, y, category_names
 
 
 def tokenize(text):
+    """ tokenize function for processing text data
+    
+        Arguments
+        text : str, text to tokenize
+    
+        Returns
+        clean_tokens: list, list of tokens
+        """   
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex, text)
     for detected_url in detected_urls:
@@ -49,6 +67,7 @@ def tokenize(text):
     return clean_tokens
     
 def build_model():
+    #This function builds the model using the MultiOutputClassifier.
     pipeline1 = Pipeline([
         ('features', FeatureUnion([
 
