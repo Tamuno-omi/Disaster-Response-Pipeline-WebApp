@@ -63,13 +63,14 @@ There are four directories in this repository:
 ## Results
 The web application and some visualizations of the dataset
 
-![](img url holder)
-![](img url holder)
+![](https://github.com/Tamuno-omi/Disaster-Response-Pipeline-WebApp/blob/master/web_app.PNG)
+![](https://github.com/Tamuno-omi/Disaster-Response-Pipeline-WebApp/blob/master/web_app_visual.PNG)
 
 A sample user input  message "We are currently trapped in our house with no food or water" was entered into the app, the app returns it's classification results.
-![](img url holder)
-![](img url holder)
+![](https://github.com/Tamuno-omi/Disaster-Response-Pipeline-WebApp/blob/master/web_app_msg1.PNG)
+![](https://github.com/Tamuno-omi/Disaster-Response-Pipeline-WebApp/blob/master/web_app_msg_2.PNG)
+![](https://github.com/Tamuno-omi/Disaster-Response-Pipeline-WebApp/blob/master/web_app_msg3.PNG)
 
 ## Licensing, Authors, Acknowledgements
 
-This project was done as part of the [Udacity Data Scientist Nanodegree Program] (https://www.udacity.com/course/data-scientist-nanodegree--nd025) and the datasets were provided by [Figure Eight](https://appen.com/resources/datasets/).
+This project was done as part of the [Udacity Data Scientist Nanodegree Program](https://www.udacity.com/course/data-scientist-nanodegree--nd025) and the datasets were provided by [Figure Eight](https://appen.com/resources/datasets/).
