@@ -58,7 +58,7 @@ There are four directories in this repository:
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3.  In another terminal, enter  `env|grep WORK`. You'll see the following output WORKSPACEDOMAIN=udacity-student-workspaces.com WORKSPACEID=view6914b2f4 Now, use the above information to open the [Web application] (https://view6914b2f4-3001.udacity-student-workspaces.com/)  the general format is -  https://WORKSPACEID-3001.WORKSPACEDOMAIN/
+3. In another terminal, enter  `env|grep WORK`. You'll see the following output WORKSPACEDOMAIN=udacity-student-workspaces.com WORKSPACEID=view6914b2f4 Now, use the above information to open the [Web application](https://view6914b2f4-3001.udacity-student-workspaces.com/)  the general format is -  https://WORKSPACEID-3001.WORKSPACEDOMAIN/
 
 ## Results
 The web application and some visualizations of the dataset
