@@ -8,7 +8,7 @@
 * [Results](#results)
   - [Classifier](#classifier)
   - [Web App](#web-app)
-* [Acknowledgements](#acknowledgements)
+* [Licensing, Authors, Acknowledgements](#licensing)
 
 ## Introduction
 In this project a web application was created to classify disaster messages into appropriate categories. The project has three key components:
@@ -58,4 +58,18 @@ There are four directories in this repository:
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3. Go to http://0.0.0.0:3001/
+3.  In another terminal, enter  `env|grep WORK`. You'll see the following output WORKSPACEDOMAIN=udacity-student-workspaces.com WORKSPACEID=view6914b2f4 Now, use the above information to open the [Web application] (https://view6914b2f4-3001.udacity-student-workspaces.com/)  the general format is -  https://WORKSPACEID-3001.WORKSPACEDOMAIN/
+
+## Results
+The web application and some visualizations of the dataset
+
+![](img url holder)
+![](img url holder)
+
+A sample user input  message "We are currently trapped in our house with no food or water" was entered into the app, the app returns it's classification results.
+![](img url holder)
+![](img url holder)
+
+## Licensing, Authors, Acknowledgements
+
+This project was done as part of the [Udacity Data Scientist Nanodegree Program] (https://www.udacity.com/course/data-scientist-nanodegree--nd025) and the datasets were provided by [Figure Eight](https://appen.com/resources/datasets/).
